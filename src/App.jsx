@@ -1,8 +1,11 @@
+import AdviceFetcher from './components/AdviceFetcher';
+
 function App() {
 	return (
-		<>
-			<p>Hello, world!</p>
-		</>
+		<div className='h-full w-full'>
+			hi
+			<AdviceFetcher />
+		</div>
 	);
 }
 
