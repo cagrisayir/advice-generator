@@ -9,8 +9,17 @@ const AdviceFetcher = () => {
 		queryKey: ['advice'],
 		queryFn: fetchAdvice,
 	});
-	console.log(adviceQuery.data);
-	return <div>AdviceFetcher</div>;
+
+	if (adviceQuery.isLoading) {
+		return <div>Loading...</div>;
+	}
+
+	if (adviceQuery.isError) {
+		return <div>{adviceQuery.error.message}</div>;
+	}
+
+	const data = adviceQuery.data;
+	return <div>{data.slip.advice}</div>;
 };
 
 export default AdviceFetcher;
