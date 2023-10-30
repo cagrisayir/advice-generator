@@ -14,14 +14,13 @@ const AdviceFetcher = () => {
 	if (isLoading) return <div>Loading...</div>;
 
 	if (isError) return <div>{error.message}</div>;
-	console.log(data);
 	return (
 		<div className='bg-bgcard flex flex-col justify-center items-center h-max w-full rounded-xl sm:max-w-xl sm:max-h-80 gap-6 pt-10 pb-10 pl-6 pr-6'>
 			<p className='text-base font-bold tracking-[0.21rem] text-center text-dicegreen'>
 				ADVICE #{data.slip.id}
 			</p>
 			<p className='text-textcyan text-2xl text-center font-bold tracking-[-0.01606rem]'>
-				&quot;{isLoading ? 'Loading...' : data.slip.advice}&quot;
+				&quot;{data.slip.advice}&quot;
 			</p>
 			<div className='flex w-full justify-between gap-4 items-center'>
 				<div className=' border-b-[0.06rem] border-[#4F5D74] w-5/12'></div>
